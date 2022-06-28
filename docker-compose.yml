@@ -9,9 +9,6 @@ services:
     volumes:
       - "./src:/var/www/html"
       - "./nginx/nginx.conf:/etc/nginx/conf.d/default.conf"
-
-    networks:
-      - mired
     links:
       - php
   php:
@@ -22,11 +19,6 @@ services:
       - "./src:/var/www/html"
     extra_hosts:
       - "db.local:127.0.0.1"
-    networks:
-      - mired
 
-networks:
-  mired:
-    driver: bridge
 
     
